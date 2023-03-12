@@ -1,4 +1,4 @@
-# iot
+# IoT
  Project made during the IoT Training, by MozDevz and TMEeducation.
 
 # Technologies
