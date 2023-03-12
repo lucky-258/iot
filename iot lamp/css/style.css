@@ -58,6 +58,7 @@ section button {
     width: 275px;
     height: 175px;
     font-size: 32px;
+    font-weight: bold;
     margin: 80px 50px 300px;
     color: #ffffff;
     background-color: #18252b;
@@ -65,6 +66,12 @@ section button {
     border-color: #2DA94E;
     border-radius: 20px;
     border-bottom: 12px solid #2DA94E;
+}
+
+section button:hover {
+    cursor: pointer;
+    color: #18252b;
+    background-color: #2DA94E;
 }
 
 footer {
