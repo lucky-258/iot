@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>IoT</title>
+</head>
+<body>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+        <script>
+            // o script tem type="module"
+            // Import the functions you need from the SDKs you need
+            //import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+            
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyAe-2UVPl2GYx0jVqx9cY6TT02mg2PWTjg",
+                authDomain: "iot-lamp-936e5.firebaseapp.com",
+                projectId: "iot-lamp-936e5",
+                storageBucket: "iot-lamp-936e5.appspot.com",
+                messagingSenderId: "611247247987",
+                appId: "1:611247247987:web:9af5cb03d0478444fa9006"
+            };
+            
+            // Initialize Firebase
+            //const app = initializeApp(firebaseConfig);
+            firebase.InitializeApp(firebaseConfig)
+
+            function ledOn() {
+                firebase.database().ref("SALA").set({    
+                    estado: "LIGADA",
+                });
+            }
+
+            function ledOff() {
+                firebase.database().ref("SALA").set({   
+                    estado: "DESLIGADA",
+                });
+            }
+        </script>
+    <div class="container">
+    <header>
+        <img src="./assets/logo.png" alt="logo iot training"/>
+        <h1>Bem-vindo ao Smart Light</h1>
+        <p>Você pode ligar ou desligar as lampadas da </p><p> sua casa através dos botoes abaixo.</p>
+    </header>
+    <section>
+        <img src="./assets/icone_ligada.png" alt="icone ligada"/>
+        <img src="./assets/icone_desligada.png" alt="icone desligada"/>
+    </section>
+    <section>
+        <button onClick="ledOn()">Ligar</button>
+        <button onClick="ledOff()">Desligar</button>
+    </section>
+    <footer>
+        <p>Sistema básico de gestão de uma casa inteligente.</p><br>
+        <p>Supported by TurboKode.lda</p>
+    </footer>
+    </div>
+</body>
+</html>
